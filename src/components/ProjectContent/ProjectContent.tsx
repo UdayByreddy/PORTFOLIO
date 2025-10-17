@@ -35,7 +35,7 @@ export default function ProjectContent({activeTab, projects, setSelectedProject,
                     <p className="text-gray-300 mb-6 line-clamp-3 leading-relaxed">{project.description}</p>
   
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.slice(0, 3)?.map(tech => (
+                      {project.technologies.slice(0, 3)?.map((tech:any) => (
                         <span key={tech} className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-xs text-gray-300">
                           {tech}
                         </span>

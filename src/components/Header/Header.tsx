@@ -37,14 +37,10 @@ const slideIn = keyframes`
   }
 `;
 
-// Underline animation
-const underlineExpand = keyframes`
-  from { width: 0; }
-  to { width: 100%; }
-`;
+
 
 // Styled Button with custom hover effect
-const NavButton = styled(Button)(({ theme }) => ({
+const NavButton = styled(Button)(() => ({
   color: "#1a1a1a",
   textTransform: "none",
   fontWeight: 600,
@@ -84,7 +80,7 @@ const NavButton = styled(Button)(({ theme }) => ({
 }));
 
 // Styled Drawer with gradient
-const StyledDrawer = styled(Drawer)(({ theme }) => ({
+const StyledDrawer = styled(Drawer)(() => ({
   "& .MuiDrawer-paper": {
     boxSizing: "border-box",
     width: drawerWidth,
@@ -94,7 +90,7 @@ const StyledDrawer = styled(Drawer)(({ theme }) => ({
 }));
 
 // Animated Logo
-const AnimatedLogo = styled(Typography)(({ theme }) => ({
+const AnimatedLogo = styled(Typography)(() => ({
   fontWeight: 700,
   fontFamily: "Inter, sans-serif",
   letterSpacing: "1px",

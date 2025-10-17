@@ -8,12 +8,13 @@ import {
 import {
   Avatar,
   Box,
-  Grid,
   IconButton,
   Paper,
   Stack,
   Typography,
 } from "@mui/material";
+import Grid from "@mui/material/Grid";
+
 import { GIT_URL, LINKEDIN_URL, NAME, ROLE } from "../../Config";
 
 export default function ProfileCard({ isVisible }: { isVisible: boolean }) {
@@ -109,8 +110,8 @@ export default function ProfileCard({ isVisible }: { isVisible: boolean }) {
         </Typography>
 
         {/* Stats */}
-        <Grid container spacing={2} justifyContent="center" my={3}>
-          <Grid item xs={4}>
+       <Grid container spacing={2} justifyContent="center" my={3}>
+          <Grid size={{ xs: 4}}>
             <Box textAlign="center" onClick={() => window.open("https://leetcode.com/u/Uday_2606/")}>
               <Typography variant="h6" color="#60a5fa" fontWeight="bold">
                 300+
@@ -120,7 +121,7 @@ export default function ProfileCard({ isVisible }: { isVisible: boolean }) {
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={4}>
+          <Grid size={{ xs: 4}}>
             <Box textAlign="center">
               <Typography variant="h6" color="#f472b6" fontWeight="bold">
                 1+ Yr
