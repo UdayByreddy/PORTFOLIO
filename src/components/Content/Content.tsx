@@ -2,7 +2,6 @@ import { FaCode, FaRocket } from "react-icons/fa";
 import {
   Box,
   Button,
-  Chip,
   Stack,
   Typography
 } from "@mui/material";
@@ -12,7 +11,6 @@ import { RESUME_LINK } from "../../Config";
 
 export default function Content({
   isVisible,
-  skills,
 }: {
   isVisible: boolean;
   skills: string[];
@@ -187,7 +185,7 @@ export default function Content({
             }}
           >
             Currently leading SigVet's frontend with React + Tauri, using NATS
-            JetStream for real-time comms, and building backend with Python +
+            JetStream for real-time comms, and building backend with Spring Boot +
             SQLite. Solved{" "}
             <Box component="span" sx={{ color: "#4ade80", fontWeight: 600, cursor: "pointer" }} onClick={handleNavigateLeetCode}>
               300+ DSA problems
@@ -196,7 +194,7 @@ export default function Content({
           </Box>
         </Stack>
 
-        {/* Skills */}
+        {/* Skills
         <Stack direction="row" flexWrap="wrap" gap={1}>
           {skills.map((skill, index) => (
             <Chip
@@ -219,7 +217,7 @@ export default function Content({
               }}
             />
           ))}
-        </Stack>
+        </Stack> */}
       </Stack>
     </Box>
   );

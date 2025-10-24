@@ -35,22 +35,48 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = () => {
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      alert('Please fill in all fields');
-      return;
+const handleSubmit = async () => {
+  // Basic validation for empty fields
+  if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+    alert('Please fill in all fields');
+    return;
+  }
+
+  // Email validation using regex
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(formData.email)) {
+    alert('Please enter a valid email address');
+    return;
+  }
+
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch("https://emailservice.up.railway.app/email/send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      setSubmitStatus("error");
+      const errorMsg = await response.text();
+      console.error("Server error:", errorMsg);
+      alert("Something went wrong. Please try again later.");
     }
-    
-    setIsSubmitting(true);
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }, 2000);
-  };
+  } catch (error) {
+    console.error("Error sending message:", error);
+    setSubmitStatus("error");
+    alert("Network error. Please check your connection.");
+  } finally {
+    setIsSubmitting(false);
+    setTimeout(() => setSubmitStatus(null), 5000);
+  }
+};
+
 
   const contactInfo = [
     {
