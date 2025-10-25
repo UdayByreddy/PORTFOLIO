@@ -11,8 +11,8 @@
     duration: '2020 - 2024',
   }
   export const EMAIL_JS = {
-    SERVICE_ID: 'service_2kqjg7d',
-    TEMPLATE_ID: 'template_3z1v6pf',
+    SERVICE_ID: 'service_6sjcl4k',
+    TEMPLATE_ID: 'template_tnmzaps',
     PUBLIC_KEY: 'WOjjEtDg90xs4vaQH',
   }
   
